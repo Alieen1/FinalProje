@@ -4,10 +4,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.w3c.dom.html.HTMLInputElement;
 
 public class MainPage {
     @FindBy(xpath = "/html/body/section[1]/div/div/div/a")
     private WebElement enrollmentButton;
+    private HTMLInputElement clickOnTwitterIcon;
+    private HTMLInputElement clickOntwitterIcon;
 
     public MainPage(WebDriver driver) {
         driver.manage().window().maximize();
@@ -39,12 +42,20 @@ public class MainPage {
     }
 
     public void ClickOnInPageButton() {this.InPersonButton.click();}
+    
 
-    public void clickOntwitterIcon() {
-        {this.clickOntwitterIcon.click();}
+    public void clickOntwitterIcon() { this.clickOnTwitterIcon.click();
     }
 
+    public WebElement getTwitterIcon() {
+        return twitterIcon;
+    }
+
+
 }
+
+
+
 
 
 
