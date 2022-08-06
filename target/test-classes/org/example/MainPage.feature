@@ -17,9 +17,30 @@ Feature: Main page
     Then the page should start with "in person"
 
   Scenario: click on twitter's page of John Doe
-    Given I'm on john Doe's page
+    Given I am on the main page
     When I click on twitter icon
     Then twitter page is opened
+
+  Scenario: Read Frequently Asked Questions
+    Given I am on the main page
+    When I click on the Question button
+    Then The maine page scroll down to Frequently Asked Questions
+    And I click on the How much does cost to attend? Question
+    Then The answer appear below the question
+
+  Scenario: Read Frequently Asked Questions
+    Given I am on the main page
+    When I click on the Question button
+    Then The maine page scroll down to Frequently Asked Questions
+    And I click on the Where is your institution located? Question
+    Then The answer appear below the question
+
+  Scenario: Read Frequently Asked Questions
+    Given I am on the main page
+    When I click on the Question button
+    Then The maine page scroll down to Frequently Asked Questions
+    And I click on the What do I need to know before hand? Question
+    Then The answer appear below the question
 
 
 
