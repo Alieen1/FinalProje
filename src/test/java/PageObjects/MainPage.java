@@ -54,6 +54,21 @@ public class MainPage {
     @FindBy(xpath ="//*[@id=\"questions\"]/div[3]/h3/button")
     private WebElement WhatDoINeedToKnowBeforeHand;
 
+    @FindBy(xpath = "//*[@id=\"questions\"]/div[1]/h3/button")
+    private WebElement whereIsYourInstitutionLocated;
+
+    @FindBy(xpath = "//*[@id=\"questions\"]/div[3]/h3/button")
+    private WebElement whatDoINeedToKnowBeforeHand;
+
+    @FindBy(xpath = "//*[@id=\"questions\"]/div[4]/h3/button")
+    private WebElement howDoISignedUp;
+
+    @FindBy(xpath = "//*[@id=\"questions\"]/div[5]/h3/button")
+    private WebElement willYourOrganisationHelpMeFindAJob;
+
+    @FindBy(xpath = "//*[@id=\"instructors\"]/div/div/div[1]/div/div/a[2]/i")
+    private WebElement facebookIcon;
+
 
     public void ClickOnHybridButton(){
         this.hybridButton.click();
@@ -74,6 +89,8 @@ public class MainPage {
     }
     public void clickOnTheQuestionButton(){this.submitQuestionButton.click();
     }
+    public void clickOnHowDoISignedUp() {this.howDoISignedUp.click();
+    }
     public WebElement getScrollToFrequentlyAskedQuestions(){return this.scrollToFrequentlyAskedQuestions;
     }
     public void clickOnHowMuchDoesItCostToAttendButton(){this.howMuchDoesItCostToAttendButton.click();
@@ -81,12 +98,18 @@ public class MainPage {
     public String getFaqHeaderText() {
         return this.faqHeader.getText();
     }
-    public void clickOnWhereIsYourInstitutionLocated(){this.clickOnWhereIsYourInstitutionLocated();
-    }
-    public void clickOnWhatDoINeedToKnowBeforeHand(){this.clickOnWhatDoINeedToKnowBeforeHand();}
+    public void clickOnWhereIsYourInstitutionLocated() { this.whereIsYourInstitutionLocated.click(); }
+    public void clickOnWhatDoINeedToKnowBeforeHand() { this.whatDoINeedToKnowBeforeHand.click(); }
+
+    public void clickOnWillYourOrganisationHelpMeFindAJob() { this.willYourOrganisationHelpMeFindAJob.click(); }
+
+    public void setClickOnFacebookIcon() { facebookIcon.click();}
+
     public WebElement getOurInstructorsHeader() {
         return this.ourInstructorsHeader;
     }
+
+
 }
 
 

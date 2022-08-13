@@ -83,11 +83,6 @@ public class StepDefinitions {
         mainPage.clickOnTheQuestionButton();
     }
 
-    @Then("The main page scroll down to Frequently Asked Questions")
-    public void the_main_page_Scroll_down_to_frequently_asked_questions() {
-
-    }
-
     @Then("I click on the How much does it cost to attend? Question")
     public void i_click_on_how_much_does_it_cost_to_attend_question() {
         Utils.scrollToElement(driver, mainPage.getScrollToFrequentlyAskedQuestions());
@@ -119,7 +114,26 @@ public class StepDefinitions {
     public void i_click_on_the_what_do_i_need_to_know_before_hand_question() {
         Utils.scrollToElement(driver, mainPage.getScrollToFrequentlyAskedQuestions());
         mainPage.clickOnWhatDoINeedToKnowBeforeHand();
-
+    }
+    @Then("I click on the How do I signed up? Question")
+    public void i_click_on_the_how_do_i_signed_up_question() {
+        Utils.scrollToElement(driver, mainPage.getScrollToFrequentlyAskedQuestions());
+        mainPage.clickOnHowDoISignedUp();
+    }
+    @Then("I click on the Will your organisation help me find a job Question? Question")
+    public void i_click_on_the_will_your_organisation_help_me_find_a_job_question_question() {
+        Utils.scrollToElement(driver, mainPage.getScrollToFrequentlyAskedQuestions());
+        mainPage.clickOnWillYourOrganisationHelpMeFindAJob();
+    }
+    @When("I click on facebook icon")
+    public void i_click_on_facebook_icon() {
+        Utils.scrollToElement(driver, mainPage.getOurInstructorsHeader());
+        mainPage.setClickOnFacebookIcon();
+    }
+    @Then("facebook page is opened")
+    public void facebook_page_is_opened() {
+        Assert.assertTrue(driver.getTitle().toLowerCase().startsWith("facebook"));
+    }
     @After
     public void CloseBrowser(Scenario scenario){
         if (scenario.isFailed()) {
