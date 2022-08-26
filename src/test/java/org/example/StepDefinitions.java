@@ -39,12 +39,6 @@ public class StepDefinitions {
         Assert.assertTrue(driver.getTitle().toLowerCase().startsWith(string));
     }
 
-    @After
-    public void cleanUp() {
-        driver.quit();
-
-    }
-
     @When("I click on hybrid button")
     public void I_click_on_hybrid_button() {
         Utils.scrollToElement(driver, mainPage.getHybridHeader());
@@ -91,7 +85,7 @@ public class StepDefinitions {
 
     @Then("The answer appear below the question")
     public void the_answer_appear_below_theQuestion() {
-
+        Assert.assertEquals("Frequently Asked Questions", mainPage.getFaqHeaderText());
     }
 
     @Then("The maine page scroll down to Frequently Asked Questions")
@@ -134,11 +128,32 @@ public class StepDefinitions {
     public void facebook_page_is_opened() {
         Assert.assertTrue(driver.getTitle().toLowerCase().startsWith("facebook"));
     }
+    @When("I click on instagram icon")
+    public void i_click_on_instagram_icon() {
+        Utils.scrollToElement(driver, mainPage.getOurInstructorsHeader());
+        mainPage.setClickOnInstagramIcon();
+    }
+    @Then("instagram page is opened")
+    public void instagram_page_is_opened() {
+        Assert.assertTrue(driver.getTitle().toLowerCase().startsWith("instagram"));
+    }
+    @When("I click on linkedin icon")
+    public void i_click_on_linkedin_icon() {
+        Utils.scrollToElement(driver, mainPage.getOurInstructorsHeader());
+        mainPage.setClickOnLinkedInIcon();
+    }
+    @Then("linkedin page is opened")
+    public void linkedin_page_is_opened() {
+        Assert.assertTrue(driver.getTitle().toLowerCase().startsWith("linkedin"));
+    }
+
     @After
-    public void CloseBrowser(Scenario scenario){
+    public void cleanUp(Scenario scenario) {
         if (scenario.isFailed()) {
             byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
         }
-
+        driver.quit();
     }
 }
+
+

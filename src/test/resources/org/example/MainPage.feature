@@ -35,7 +35,7 @@ Feature: Main page
     And I click on the Where is your institution located? Question
     Then The answer appear below the question
 
-  Scenario: Read Frequently Asked Questio
+  Scenario: Read Frequently Asked Question
     Given I am on the main page
     When I click on the Question button
     Then The maine page scroll down to Frequently Asked Questions
@@ -50,7 +50,7 @@ Feature: Main page
     And I click on the How do I signed up? Question
     Then The answer appear below the question
 
-  Scenario: Read  Asked Questio
+  Scenario: Read  Asked Question
     Given I am on the main page
     When I click on the Question button
     Then The maine page scroll down to Frequently Asked Questions
@@ -62,5 +62,13 @@ Feature: Main page
     When I click on facebook icon
     Then facebook page is opened
 
+  Scenario: click on instagram's page of Jane Doe
+    Given I am on the main page
+    When I click on instagram icon
+    Then instagram page is opened
 
+  Scenario: click on likedin's page of Sara Smith
+    Given I am on the main page
+    When I click on linkedin icon
+    Then linkedin page is opened
 

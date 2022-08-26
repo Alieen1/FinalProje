@@ -69,6 +69,11 @@ public class MainPage {
     @FindBy(xpath = "//*[@id=\"instructors\"]/div/div/div[1]/div/div/a[2]/i")
     private WebElement facebookIcon;
 
+    @FindBy (xpath = "//*[@id=\"instructors\"]/div/div/div[2]/div/div/a[4]/i")
+    private WebElement instagramIcon;
+
+    @FindBy(xpath = "//*[@id=\"instructors\"]/div/div/div[4]/div/div/a[3]/i")
+    private WebElement linkedinIcon;
 
     public void ClickOnHybridButton(){
         this.hybridButton.click();
@@ -104,6 +109,11 @@ public class MainPage {
     public void clickOnWillYourOrganisationHelpMeFindAJob() { this.willYourOrganisationHelpMeFindAJob.click(); }
 
     public void setClickOnFacebookIcon() { facebookIcon.click();}
+
+    public void setClickOnInstagramIcon() {instagramIcon.click();}
+
+    public void setClickOnLinkedInIcon() {linkedinIcon.click();}
+
 
     public WebElement getOurInstructorsHeader() {
         return this.ourInstructorsHeader;
